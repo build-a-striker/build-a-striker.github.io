@@ -46,14 +46,21 @@ export function FixedTemplateHome({ home }: { home: HomePageDefinition }) {
     entries,
     supplementHtml: supplement(home),
   });
+  // Keep the original Footer after all page content, including FAQ and ad slots.
+  // The fixed-template HTML already contains Footer markup; split only the
+  // render location, never the Footer classes or responsive structure.
+  const footerOffset = rendered.rest.indexOf("<footer");
+  const mainHtml = footerOffset >= 0 ? rendered.rest.slice(0, footerOffset) : rendered.rest;
+  const footerHtml = footerOffset >= 0 ? rendered.rest.slice(footerOffset) : "";
   return (
     <>
       <JsonLd data={homeSchemas(home)} />
-      <div dangerouslySetInnerHTML={{ __html: rendered.rest }} />
+      <div dangerouslySetInnerHTML={{ __html: mainHtml }} />
       <div className="site-container"><NativeAdSlot /></div>
       {home.faq.length ? (
         <div className="site-container"><Faq items={home.faq} /></div>
       ) : null}
+      {footerHtml ? <div dangerouslySetInnerHTML={{ __html: footerHtml }} /> : null}
     </>
   );
 }
