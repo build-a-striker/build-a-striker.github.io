@@ -71,12 +71,18 @@ export function FixedTemplateInner({ page }: { page: SeoPageDefinition }) {
     lead: page.hero.lead,
     articleHtml: articleInner(page),
   });
+  // Keep the inherited Yorich footer visually identical on every route and
+  // strictly after article / FAQ / related links / ad slot.
+  const footerStart = rendered.rest.lastIndexOf("<footer");
+  const bodyHtml = footerStart >= 0 ? rendered.rest.slice(0, footerStart) : rendered.rest;
+  const footerHtml = footerStart >= 0 ? rendered.rest.slice(footerStart) : "";
   return (
     <>
       <JsonLd data={pageSchemas(page)} />
-      <div dangerouslySetInnerHTML={{ __html: rendered.rest }} />
+      <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
       {page.slug === "codes" ? <FixedCodeEvents /> : null}
       <div className="site-container"><NativeAdSlot /></div>
+      {footerHtml ? <div dangerouslySetInnerHTML={{ __html: footerHtml }} /> : null}
     </>
   );
 }
