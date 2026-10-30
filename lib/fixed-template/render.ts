@@ -156,15 +156,16 @@ function insertSupplement(html:string,supplement:string){if(html.includes("</mai
 /** Preserve Yorich's footer columns and classes, filling only blank game-specific copy and links. */
 function populateSoftGuideFooter(html: string, input: FixedTemplateInput): string {
   if (input.skin !== "soft-guide") return html;
-  const start = html.indexOf('<footer class="site-footer">');
-  if (start < 0) return html;
+  const footerOpen = /<footer\s+class="site-footer[^"]*">/.exec(html);
+  if (!footerOpen) return html;
+  const start = footerOpen.index;
   const end = html.indexOf('</footer>', start);
   if (end < 0) return html;
   const links = input.nav.filter(x => x.href !== "/");
   const link = (at: number) => links[at]
     ? `<a href="${safeAttr(links[at].href)}">${esc(links[at].label)}</a>`
     : `<a href="${safeAttr(input.homeHref)}">Home</a>`;
-  const footer = `<footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand"><img class="brand-logo" src="${safeAttr(input.logoUrl || "/images/build-a-striker-logo.png")}" alt=""><b>${esc(input.gameName)}</b></div><p>Independent Roblox player guides. Not affiliated with Roblox or the developer.</p></div><div><b>Game Guides</b>${link(0)}${link(1)}${link(2)}</div><div><b>More Resources</b>${link(3)}<a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div></div></footer>`;
+  const footer = `${footerOpen[0]}<div class="footer-inner"><div><div class="footer-brand"><img class="brand-logo" src="${safeAttr(input.logoUrl || "/images/build-a-striker-logo.png")}" alt=""><b>${esc(input.gameName)}</b></div><p>Independent Roblox player guides. Not affiliated with Roblox or the developer.</p></div><div><b>Game Guides</b>${link(0)}${link(1)}${link(2)}</div><div><b>More Resources</b>${link(3)}<a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div></div></footer>`;
   return html.slice(0, start) + footer + html.slice(end + '</footer>'.length);
 }
 
