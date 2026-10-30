@@ -83,6 +83,23 @@
         ]
       },
       {
+        "id": "when-to-use-codes",
+        "heading": "When to Use Reroll Codes in Build A Striker",
+        "paragraphs": [
+          "If a reported code gives a team reroll or player reroll in your current version, first understand what the choice changes before spending it. The developer describes the regular builder as a random team followed by a random player, then one attribute selection. Team and player rerolls therefore belong to different stages of that sequence; their exact UI, availability and limitations still depend on the live game.",
+          "Do not choose an attribute just because a code was newly released. Open the Attributes reference and decide what your current striker needs. In a short ten-round process, a reroll is only useful when the option it changes matters to your plan. None of the listed codes guarantees a top-rated player or a leaderboard result."
+        ],
+        "subsections": [
+          {
+            "heading": "Quick pre-redemption checklist",
+            "paragraphs": [
+              "Check that you are in the Wild Card experience, paste the code with no extra characters, and read the in-game success or failure message. If the code is reported recently but does not work, try the official community announcement before treating an alternative spelling as valid.",
+              "Rewards and code status may change after an update. Our table links to its published comparison source, so you can check the reporting chain without entering an account password on an external site."
+            ]
+          }
+        ]
+      },
+      {
         "id": "sources",
         "heading": "Where New Codes Are Announced",
         "paragraphs": [
@@ -245,6 +262,24 @@
             ]
           ]
         }
+      },
+      {
+        "id": "practice-run-example",
+        "heading": "An Example Ten-Round Decision Log",
+        "intro": "The following is an illustrative thought process, not a claim that these choices or players appear in a fixed order in the game.",
+        "paragraphs": [
+          "Suppose your goal is a striker that prioritizes scoring. In the early rounds, record which attribute you pick and why. If Shooting is offered, you might select it for that goal; if it is not offered, choose from the visible alternatives rather than restarting your plan around a player the game never presented.",
+          "At the midpoint, compare your recorded choices. If your run has emphasized shooting repeatedly, you might seek a complementary quality such as Speed or Dribbling when available. That is a trade-off based on your goal, not a hidden game rule. If your available selections instead favor Passing or Vision, consider whether a creative build is the better fit for the current run.",
+          "In the final rounds, avoid making a last-minute choice only because another player recommended it as universally best. Read the labels and the result screen. After your ten selections, keep a quick record and try a different emphasis in the next run. A comparison is more informative than declaring a particular combination unbeatable from one random outcome."
+        ],
+        "subsections": [
+          {
+            "heading": "What a useful record looks like",
+            "paragraphs": [
+              "Write down the round number, the visible team or player if useful, the attribute you actually selected and one short reason. Do not invent probabilities or rankings for players you have not seen. After the run, review whether your choices formed a coherent style and note one change to test next time."
+            ]
+          }
+        ]
       },
       {
         "id": "mistakes",
@@ -474,6 +509,74 @@
         ]
       },
       {
+        "id": "attribute-decision-matrix",
+        "heading": "A Practical Attribute Selection Matrix",
+        "intro": "These are planning prompts based on the ten officially named attribute categories, not an in-game damage formula, certified tier ranking or claim that any choice is always stronger.",
+        "table": {
+          "caption": "How to think about the official attribute names during a ten-round build",
+          "columns": [
+            "Attribute",
+            "Planning question",
+            "When to reconsider"
+          ],
+          "rows": [
+            [
+              "Shooting",
+              "Is finishing your main goal for this run?",
+              "You have already chosen several scoring-oriented options."
+            ],
+            [
+              "Speed",
+              "Do you want a movement-oriented concept?",
+              "Another available option would round out a one-sided build."
+            ],
+            [
+              "Dribbling",
+              "Are you pursuing an on-ball-control theme?",
+              "Your next choice may support finishing or passing better."
+            ],
+            [
+              "Passing",
+              "Are you building around distribution or creativity?",
+              "Your strategy is narrowly centered on finishing."
+            ],
+            [
+              "Physical",
+              "Do you want to test a more physical concept?",
+              "You cannot confirm how its value is calculated in-game."
+            ],
+            [
+              "Defense",
+              "Would a defensive emphasis match this experiment?",
+              "It pulls the run away from your chosen attacking focus."
+            ],
+            [
+              "Vision",
+              "Does a vision-oriented concept fit the other choices?",
+              "You are assuming a numeric bonus without evidence."
+            ],
+            [
+              "IQ",
+              "Do you want to explore an intelligence-themed build?",
+              "You are treating a name as a proven multiplier."
+            ],
+            [
+              "Ego",
+              "Is Ego part of the playstyle you want to compare?",
+              "You are relying on unofficial tier lists alone."
+            ],
+            [
+              "Weapon",
+              "Is Weapon a deliberate theme for this run?",
+              "You have not checked its meaning in the live version."
+            ]
+          ]
+        },
+        "paragraphs": [
+          "A matrix is most useful when you use it as a question list. You still must pick from the options that actually appear. There is no evidence in the public Roblox description that one named attribute wins every comparison, so this table intentionally avoids made-up percentages."
+        ]
+      },
+      {
         "id": "playstyles",
         "heading": "Attribute Choices for Different Playstyles",
         "paragraphs": [
@@ -643,6 +746,37 @@
               "Rounds 1–3: notice what the random selections favor. Rounds 4–7: look for helpful complements if presented. Rounds 8–10: consider which broad themes you have underrepresented. This is advice for organizing decisions, not a measured game mechanic."
             ]
           }
+        ]
+      },
+      {
+        "id": "build-selection-workflow",
+        "heading": "A Repeatable Build Selection Workflow",
+        "intro": "Use the same simple decision process for each strategy so your results can be compared fairly across random runs.",
+        "steps": [
+          {
+            "heading": "Name your goal",
+            "description": "Write one sentence: for example, favor finishing, emphasize movement, or test a balanced set of attribute names."
+          },
+          {
+            "heading": "Choose flexible categories",
+            "description": "Pick two or three relevant attribute themes, not an exact impossible-to-guarantee player sequence."
+          },
+          {
+            "heading": "Record actual picks",
+            "description": "Note your choices from the ten rounds; do not fill missing rounds with imagined player names."
+          },
+          {
+            "heading": "Review the result",
+            "description": "Compare the final screen and any leaderboard information the game shows, without assuming a score formula."
+          },
+          {
+            "heading": "Change only one aim",
+            "description": "On a later run, emphasize a different attribute theme to learn what suits your preferences."
+          }
+        ],
+        "paragraphs": [
+          "For a first attempt, a balanced approach is easy to follow because it gives you multiple reasonable paths through random options. A finishing-focused approach makes sense when your visible options support it; it is not automatically best in every roll. Likewise, a playmaker theme can be interesting without being a proven competitive winner.",
+          "Do not confuse the four sample archetypes in this guide with official character classes. They are editorial names for planning decisions. The game developer confirms the random selection loop and ten attribute names, but does not document universally best team percentages or guaranteed combinations in its public description."
         ]
       },
       {
