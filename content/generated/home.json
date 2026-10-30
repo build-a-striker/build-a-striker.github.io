@@ -1,0 +1,227 @@
+{
+  "enabled": true,
+  "slug": "",
+  "pageType": "home",
+  "title": "Build A Striker Wiki: Codes, Attributes & Best Builds",
+  "description": "Build A Striker is a Roblox 10-round striker builder by Wild Card. Learn the rules, compare all 10 attributes, find codes, and plan stronger builds.",
+  "navVisible": true,
+  "hero": {
+    "eyebrow": "Independent Roblox game guide",
+    "heading": "Build A Striker: Roblox Codes, Guides & Builds",
+    "lead": "Build A Striker is a Roblox game by Wild Card. Roll a random team, draw a player, pick one attribute, and repeat for ten rounds to assemble your striker.",
+    "supportingText": "Find recent code reports, a first-run checklist, all ten official attribute names, and adaptable build strategies. This is an independent fan guide, not an official game website.",
+    "primaryLink": {
+      "label": "View reported codes",
+      "slug": "codes"
+    },
+    "secondaryLink": {
+      "label": "Play on Roblox",
+      "url": "https://www.roblox.com/games/98256320592611/Build-A-Striker"
+    }
+  },
+  "sections": [
+    {
+      "id": "start-here",
+      "heading": "Start Here: Build A Striker Guides",
+      "intro": "Choose the guide that matches what you need right now. Each page handles a separate task rather than repeating the same overview.",
+      "links": [
+        {
+          "label": "Latest Codes",
+          "slug": "codes",
+          "description": "Recently reported codes, rewards, and redemption instructions."
+        },
+        {
+          "label": "Beginner Guide",
+          "slug": "beginner-guide",
+          "description": "A clear first-run checklist for the ten-round striker builder."
+        },
+        {
+          "label": "All 10 Attributes",
+          "slug": "attributes",
+          "description": "The official attribute names and a selection framework."
+        },
+        {
+          "label": "Best Builds",
+          "slug": "best-builds",
+          "description": "Four practical build approaches and their trade-offs."
+        }
+      ]
+    },
+    {
+      "id": "what-is-build-a-striker",
+      "heading": "What Is Build A Striker on Roblox?",
+      "paragraphs": [
+        "Build A Striker is an unofficial Blue Lock-inspired Roblox experience developed by Wild Card. Its central challenge is building a single striker from randomly selected teams, players, and attributes, not managing a traditional football club or training a real-life athlete. The Roblox experience description is the primary source for the core rules described here.",
+        "At the start of a round, the game rolls a team within a range that the developer describes as First Selection through Pros. You then receive a player from that team and choose exactly one of the attributes listed for that player. The same sequence repeats for a total of ten rounds. The completed striker can then be compared on the game leaderboard.",
+        "Because the options are random, no guide can promise you will see a specific player, team, or stat at a fixed round. A practical plan is to choose a playstyle, look at the choices actually presented, and adapt your remaining decisions. Our beginner guide explains that decision loop without inventing odds or private game formulas."
+      ],
+      "subsections": [
+        {
+          "heading": "The Team Roll and Player Pick",
+          "paragraphs": [
+            "Each round begins with a random team. A player is then drawn from that team. The official game description confirms this sequence but does not publish a complete probability table for every team or player. Treat exact percentages elsewhere as unverified unless supported by in-game evidence."
+          ]
+        },
+        {
+          "heading": "One Attribute per Round",
+          "paragraphs": [
+            "The official description says to choose ONE of ten attributes for each player pick. That makes every choice an opportunity cost: selecting one kind of strength means leaving the other displayed choices behind for that round. The ten round total is confirmed; any claim about a guaranteed final rating would require additional evidence."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "how-the-builder-works",
+      "heading": "How the 10-Round Striker Builder Works",
+      "intro": "The following outline summarizes the developer-described loop; it is not a claim that every on-screen button uses exactly these words.",
+      "steps": [
+        {
+          "heading": "Open the official experience",
+          "description": "Use the Play on Roblox link and check that the developer is Wild Card."
+        },
+        {
+          "heading": "Receive a team and a player",
+          "description": "See which randomly selected team and player are offered for the round."
+        },
+        {
+          "heading": "Choose one attribute",
+          "description": "Compare the available options with the goal of your striker; select only one."
+        },
+        {
+          "heading": "Repeat through ten rounds",
+          "description": "Use later rounds to complement or adjust the choices you have already made."
+        },
+        {
+          "heading": "Review the finished striker",
+          "description": "Examine your result and the leaderboard interface that the developer references."
+        }
+      ],
+      "links": [
+        {
+          "label": "Learn each step of your first run",
+          "slug": "beginner-guide",
+          "description": "A beginner-focused ten-round walkthrough and round-stage checklist."
+        }
+      ]
+    },
+    {
+      "id": "codes",
+      "heading": "Find Build A Striker Codes",
+      "paragraphs": [
+        "Codes are a separate, time-sensitive task from learning the game. Recent guides have reported strings such as CHEMISTRY, CRYSTAL and FLOW, with rewards that may include rerolls, Yen, or a Shiny Crystal. A third-party code listing is not the same thing as us redeeming the code ourselves.",
+        "Our codes page distinguishes reported rewards from actually tested redemptions, shows its review date, and explains where to enter codes. We do not ask for Roblox credentials or claim guaranteed rewards. Code lists can change between game updates."
+      ],
+      "links": [
+        {
+          "label": "See the reported codes and redemption steps",
+          "slug": "codes",
+          "description": "Copy strings and compare source notes and reward discrepancies."
+        }
+      ]
+    },
+    {
+      "id": "all-ten-attributes",
+      "heading": "Explore All 10 Striker Attributes",
+      "intro": "The names below are taken from the official Roblox game description. Their precise in-game formulas are not published there.",
+      "table": {
+        "caption": "Official attribute names",
+        "columns": [
+          "Attribute",
+          "Broad interpretation, not a verified game formula"
+        ],
+        "rows": [
+          [
+            "Shooting",
+            "An attacking or finishing theme."
+          ],
+          [
+            "Speed",
+            "A movement or pace theme."
+          ],
+          [
+            "Dribbling",
+            "A ball-control theme."
+          ],
+          [
+            "Passing",
+            "A distribution theme."
+          ],
+          [
+            "Physical",
+            "A physical contest theme."
+          ],
+          [
+            "Defense",
+            "A defensive theme."
+          ],
+          [
+            "Vision",
+            "A seeing-options or awareness theme."
+          ],
+          [
+            "IQ",
+            "An intelligence or decision-making label."
+          ],
+          [
+            "Ego",
+            "A special named game attribute; effect not confirmed here."
+          ],
+          [
+            "Weapon",
+            "A special named game attribute; effect not confirmed here."
+          ]
+        ]
+      },
+      "links": [
+        {
+          "label": "Compare every attribute",
+          "slug": "attributes",
+          "description": "See the confirmed labels, possible roles, and evidence boundaries."
+        }
+      ]
+    },
+    {
+      "id": "build-strategies",
+      "heading": "Compare Build A Striker Build Strategies",
+      "paragraphs": [
+        "A build is a decision framework for responding to whatever appears in a random run, not a shopping list of guaranteed pickups. For example, a finishing-oriented approach may pay attention to Shooting, while a movement-oriented approach may consider Speed and Dribbling. Those relationships are editorial interpretations of the labels, not verified damage multipliers.",
+        "Our build comparison separates Finisher, Speed Runner, Playmaker and Balanced approaches. Each has trade-offs, and a sensible choice may change when new random options appear. We deliberately do not publish fabricated S-tier player lists or guaranteed outcomes."
+      ],
+      "links": [
+        {
+          "label": "Compare four flexible builds",
+          "slug": "best-builds",
+          "description": "View priorities, potential downsides, and a pivot checklist."
+        }
+      ]
+    },
+    {
+      "id": "official-source",
+      "heading": "Official Game Link and Accuracy Notes",
+      "paragraphs": [
+        "The official reference for this guide is the Roblox experience at https://www.roblox.com/games/98256320592611/Build-A-Striker (developer: Wild Card). The site is an independent player resource and does not represent the developer or Roblox. Game mechanics, code availability, and event names can change after this review.",
+        "Where we cannot verify a precise effect or a code redemption ourselves, we say so directly. This is important for items such as Ego, Weapon, special crystals, team probabilities, and the relative strength of builds: their names and the existence of the builder do not establish their exact numerical consequences."
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is Build A Striker a Roblox game?",
+      "answer": "Yes. The official Roblox experience lists Wild Card as the developer. This website is an independent guide, not an official download or game client."
+    },
+    {
+      "question": "How many rounds are in Build A Striker?",
+      "answer": "The game description confirms ten rounds. Each round includes a randomly selected team and player and a choice of one attribute."
+    },
+    {
+      "question": "Which attributes can I choose?",
+      "answer": "The developer lists Shooting, Speed, Dribbling, Passing, Physical, Defense, Vision, IQ, Ego, and Weapon. See the Attributes guide for explanations and uncertainty notes."
+    },
+    {
+      "question": "Where can I get Build A Striker codes?",
+      "answer": "The Codes guide lists recently reported strings and third-party sources. It also explains how to attempt redemption; successful in-game redemption is not independently confirmed by this site."
+    }
+  ],
+  "screenshots": [],
+  "lastReviewed": "2026-10-29"
+}
