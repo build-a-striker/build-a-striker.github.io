@@ -1,0 +1,755 @@
+[
+  {
+    "enabled": true,
+    "slug": "codes",
+    "pageType": "codes",
+    "navLabel": "Codes",
+    "title": "Build A Striker Codes (October 2026): Rerolls & Yen",
+    "description": "Find Build A Striker codes for rerolls, Yen and more. Compare reported rewards, copy codes, learn redemption steps and check when each entry was reviewed.",
+    "navVisible": true,
+    "hero": {
+      "eyebrow": "Build A Striker Roblox guide",
+      "heading": "Build A Striker Codes (October 2026)",
+      "lead": "Quickly copy recently reported Build A Striker codes, check their reward sources, and learn how to redeem them. Reported does not mean we tested the code ourselves."
+    },
+    "sections": [
+      {
+        "id": "reported-codes",
+        "heading": "Latest Reported Build A Striker Codes",
+        "intro": "Reviewed against publicly available code guides on October 29, 2026. These are not individually tested in our own Roblox session.",
+        "paragraphs": [
+          "The list below is deliberately labeled Recently reported rather than Active or Working. Code status can change without notice, and one code may have already been used on your account. The copy buttons copy only the code string and never request your Roblox password.",
+          "Reported reward amounts for STRIKER and EGOIST differ between sources. Keep the code as a candidate, but do not treat either reward as a confirmed fact until you redeem it in the game. The separate spelling QUOTES appears on some sites, while other sites report QUEUES; we exclude unconfirmed variants from the primary list."
+        ]
+      },
+      {
+        "id": "redeem",
+        "heading": "How to Redeem Codes in Build A Striker",
+        "intro": "Multiple published guides describe a Settings-menu redemption field. The exact layout can change after updates.",
+        "steps": [
+          {
+            "heading": "Check prerequisites",
+            "description": "Some guides say to join the Wild Card Roblox group and like the game before redemption. If the game requires this, use the legitimate Roblox UI."
+          },
+          {
+            "heading": "Launch the official game",
+            "description": "Open the Build A Striker experience from the developer-linked Roblox page, not an unrelated login site."
+          },
+          {
+            "heading": "Open Settings",
+            "description": "Guides place the code entry field near the bottom of Settings. Locate the input in your current game version."
+          },
+          {
+            "heading": "Paste and redeem",
+            "description": "Use Copy next to the code, paste it without spaces, and press the in-game Redeem action."
+          },
+          {
+            "heading": "Check the actual response",
+            "description": "Only a successful in-game message or changed inventory can confirm that a code worked for your account."
+          }
+        ]
+      },
+      {
+        "id": "code-not-working",
+        "heading": "Why Is My Build A Striker Code Not Working?",
+        "subsections": [
+          {
+            "heading": "Check the characters first",
+            "paragraphs": [
+              "Paste the entire code without extra spaces or a line break. Some sources disagree on QUEUES versus QUOTES, so verify the exact spelling against the developer announcement when possible."
+            ]
+          },
+          {
+            "heading": "Look for account or update limitations",
+            "paragraphs": [
+              "A code may have expired, already been claimed on your account, or depend on a group/like condition. Those are troubleshooting possibilities, not claims that any individual entry has expired."
+            ]
+          },
+          {
+            "heading": "Try a current Roblox server",
+            "paragraphs": [
+              "After an update, some guides recommend relaunching the experience if a newly published code fails. Do not assume relaunching guarantees redemption or any reward."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "unconfirmed",
+        "heading": "Codes That Need Rechecking",
+        "paragraphs": [
+          "STRIKER: Pocket Tactics reports ten player rerolls, while some other lists report ten team rerolls. EGOIST: sources also disagree between team and player rerolls. Do not claim exact rewards as verified until an in-game observation resolves the conflict.",
+          "QUEUES appears in several current code roundups. QUOTES appears in some other third-party pages; we have not established that both are valid. Treat the alternative spelling as unverified rather than presenting a new free reward.",
+          "No expired-code inventory has been independently established by this site. We will only move a code into an expired list after reliable confirmation, not merely because one user experiences a redemption failure."
+        ]
+      },
+      {
+        "id": "sources",
+        "heading": "Where New Codes Are Announced",
+        "paragraphs": [
+          "The Roblox game description encourages players to join its community server for codes and updates. Use the links accessible through the official Roblox experience to avoid fake invitation pages. Published comparison sources for this review include Pocket Tactics (https://www.pockettactics.com/build-a-striker-codes), Try Hard Guides (https://tryhardguides.com/build-a-striker-codes/), and Pro Game Guides (https://progameguides.com/roblox/roblox-build-a-striker-codes/).",
+          "Our most recent source comparison date is October 29, 2026; this is not a claim that we redeemed each string on that date. If you need a current answer, compare the in-game response and the developer-linked community channel."
+        ],
+        "links": [
+          {
+            "label": "Understand how rerolls fit into a run",
+            "slug": "beginner-guide",
+            "description": "Learn the ten-round loop before using reported bonuses."
+          },
+          {
+            "label": "Compare four build strategies",
+            "slug": "best-builds",
+            "description": "Adapt your choices without assuming a perfect reroll."
+          }
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Are these Build A Striker codes verified in game?",
+        "answer": "Not by this website. They are reported by third-party code guides checked October 29, 2026. An in-game successful redemption is the only reliable account-specific confirmation."
+      },
+      {
+        "question": "What should I do if a code fails?",
+        "answer": "Check spelling, group/like prerequisites, prior redemption and game updates. Do not share your Roblox password with sites offering codes."
+      },
+      {
+        "question": "Do I have to join the developer group?",
+        "answer": "Multiple current guides report a Roblox group and like prerequisite. Check the in-game message and Wild Card official links for the current requirement."
+      },
+      {
+        "question": "Are there expired codes?",
+        "answer": "We do not have an independently confirmed expired-code list as of this review. Some published lists say none; that is not a guarantee that every entry still works."
+      }
+    ],
+    "screenshots": [],
+    "relatedSlugs": [
+      "beginner-guide",
+      "attributes",
+      "best-builds"
+    ],
+    "lastReviewed": "2026-10-29"
+  },
+  {
+    "enabled": true,
+    "slug": "beginner-guide",
+    "pageType": "guide",
+    "navLabel": "Beginner Guide",
+    "title": "Build A Striker Beginner Guide: How the 10 Rounds Work",
+    "description": "Build A Striker beginner guide: learn the Roblox team-roll, player-pick, and attribute-choice loop across 10 rounds with a practical checklist.",
+    "navVisible": true,
+    "hero": {
+      "eyebrow": "Build A Striker Roblox guide",
+      "heading": "Build A Striker Beginner Guide: Your First 10 Rounds",
+      "lead": "Ten rounds, ten possible attribute names, and one selection per round. Follow this beginner decision checklist as your random team and player offers appear."
+    },
+    "sections": [
+      {
+        "id": "first-steps",
+        "heading": "How to Start Build A Striker on Roblox",
+        "paragraphs": [
+          "Open the Roblox experience identified as Build A Striker and confirm that the developer is Wild Card. This is important because similarly named games and fan guides can describe completely different mechanics. Our link opens the developer-listed experience rather than a separate browser game or a download.",
+          "The confirmed gameplay loop is simple to explain but takes judgment to play well: a random team is chosen, a random player appears, and you select one of that player’s ten attribute categories. Repeat for ten rounds to assemble one striker. The official description also mentions a leaderboard, but we have not documented every post-run screen or button label.",
+          "Before choosing any attribute, decide what kind of result you want to explore: finishing, movement, chance creation, or a flexible mixture. These are our planning labels, not official character classes. Your actual options will depend on the random player the game shows."
+        ],
+        "links": [
+          {
+            "label": "Open the attributes reference",
+            "slug": "attributes",
+            "description": "Read the exact ten labels before your first pick."
+          }
+        ]
+      },
+      {
+        "id": "core-loop",
+        "heading": "The Team Roll, Player Draw and Attribute Pick",
+        "intro": "Use this sequence as a mental model, not as a claim about the names of every button on screen.",
+        "steps": [
+          {
+            "heading": "Round begins with a team",
+            "description": "The developer says a random team is rolled from First Selection through Pros. No official odds are provided here."
+          },
+          {
+            "heading": "A player appears",
+            "description": "The team determines the random player offered for that round. We do not invent a roster or rarity percentage."
+          },
+          {
+            "heading": "Pick exactly one attribute",
+            "description": "Compare the available choice with your plan. The official description expressly says choose ONE of ten attributes."
+          }
+        ]
+      },
+      {
+        "id": "ten-round-plan",
+        "heading": "A Simple Plan for All 10 Rounds",
+        "paragraphs": [
+          "There is no guaranteed script for ten random rounds. The point of a good beginner plan is to ask a better question at each choice. Early on, decide what the run might become. During the middle rounds, favor complementary options when the random offers allow them. Near the end, consider which needs are unaddressed instead of pursuing a name simply because it sounds rare.",
+          "If the first few offers strongly suggest one direction, you can lean into that approach. If later options do not support it, there is no shame in pivoting. No available official information proves that one specific order of Shooting, Speed, or other attributes always yields the highest score."
+        ],
+        "subsections": [
+          {
+            "heading": "Rounds 1–3: Choose Your Goal",
+            "paragraphs": [
+              "Take stock of which attributes appear and pick a provisional goal: Finisher, Speed Runner, Playmaker, or Balanced. This is an organizational aid. The game has not promised any of these as official classes."
+            ],
+            "bullets": [
+              "Ask which of your options aligns with the goal.",
+              "Do not assume a specific team or player will appear later.",
+              "Keep a mental note of the first three selections."
+            ]
+          },
+          {
+            "heading": "Rounds 4–7: Look for Complementary Choices",
+            "paragraphs": [
+              "Mid-run, evaluate the combination you are actually assembling. If you are aiming for movement but have few control-oriented choices, consider an available complementary attribute without inventing an effect or guaranteed synergy."
+            ],
+            "bullets": [
+              "Compare present choices, not hypothetical future picks.",
+              "Avoid using an unverified tier list as the only reason for a choice.",
+              "If your original plan becomes unrealistic, adjust the direction."
+            ]
+          },
+          {
+            "heading": "Rounds 8–10: Review What Is Missing",
+            "paragraphs": [
+              "With only a few decisions left, inspect the broad themes already chosen and decide whether consistency or variety matters more to your plan. This is an editorial heuristic, not a tested numerical rule."
+            ],
+            "bullets": [
+              "Look for gaps in your current set of selections.",
+              "Do not assume a late-round reroll guarantees a better player.",
+              "Review the result after your tenth selection."
+            ]
+          }
+        ],
+        "table": {
+          "caption": "Beginner round-stage checklist",
+          "columns": [
+            "Stage",
+            "Question to ask",
+            "Practical approach"
+          ],
+          "rows": [
+            [
+              "Rounds 1–3",
+              "Which direction is emerging?",
+              "Choose a flexible initial priority."
+            ],
+            [
+              "Rounds 4–7",
+              "What supports that direction?",
+              "Prefer complementary available options."
+            ],
+            [
+              "Rounds 8–10",
+              "What is still missing?",
+              "Adapt rather than chase a promised perfect roll."
+            ]
+          ]
+        }
+      },
+      {
+        "id": "mistakes",
+        "heading": "Beginner Mistakes to Avoid",
+        "subsections": [
+          {
+            "heading": "Confusing the game with another title",
+            "paragraphs": [
+              "Build A Striker by Wild Card is a ten-round Roblox random builder. A guide about league transfers or an entirely different shooter is describing something else."
+            ]
+          },
+          {
+            "heading": "Treating every build recommendation as a fact",
+            "paragraphs": [
+              "Editorial build ideas can help you frame a run, but game-specific multipliers and tier rankings need repeatable evidence. No universal formula is confirmed by the official description."
+            ]
+          },
+          {
+            "heading": "Trusting untested code claims",
+            "paragraphs": [
+              "Recent code strings may be useful, but do not spend time expecting a specific reward if sources disagree or the game says the code cannot be redeemed."
+            ]
+          },
+          {
+            "heading": "Ignoring the one-attribute decision",
+            "paragraphs": [
+              "A single choice per round makes opportunity cost meaningful. Make the decision in front of you, rather than planning as if you could take all ten options at once."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "after-first-build",
+        "heading": "What to Do After Your First Build",
+        "paragraphs": [
+          "After ten selections, look at the striker and any comparison information that the current Roblox version provides. The developer mentions climbing a leaderboard; the precise ranking formula is not documented here. Keep your own notes on which attribute themes you chose if you want to compare multiple attempts.",
+          "For a second run, choose one variable to explore: a more finishing-oriented approach, a movement-oriented approach, or a balanced set of selections. This is a learning exercise, not a promise of a stronger score. To understand all available names, use the Attributes guide; to examine different priorities, use Best Builds."
+        ],
+        "links": [
+          {
+            "label": "See flexible build approaches",
+            "slug": "best-builds",
+            "description": "Compare strategies for different random offers."
+          },
+          {
+            "label": "Find currently reported codes",
+            "slug": "codes",
+            "description": "Check bonus reports before attempting another run."
+          }
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "How many rounds are in Build A Striker?",
+        "answer": "The official game description says ten rounds, with a random team, a random player and one attribute choice each round."
+      },
+      {
+        "question": "Can I choose more than one attribute from a player?",
+        "answer": "The developer explicitly describes choosing ONE attribute. We have not confirmed an exception to this rule."
+      },
+      {
+        "question": "What is the best first attribute?",
+        "answer": "There is no verified universally best first pick. Choose among the options shown based on whether you want to explore finishing, movement, playmaking or balance."
+      },
+      {
+        "question": "Where can I find a build to try?",
+        "answer": "See the Best Builds guide for conditional strategy ideas and their limits, rather than unverified numerical rankings."
+      }
+    ],
+    "screenshots": [],
+    "relatedSlugs": [
+      "attributes",
+      "best-builds",
+      "codes"
+    ],
+    "lastReviewed": "2026-10-29"
+  },
+  {
+    "enabled": true,
+    "slug": "attributes",
+    "pageType": "database",
+    "navLabel": "Attributes",
+    "title": "Build A Striker Attributes: All 10 Stats Explained",
+    "description": "Explore all 10 Build A Striker attributes—Shooting, Speed, Dribbling, Passing and more—and use a practical selection checklist for your next round.",
+    "navVisible": true,
+    "hero": {
+      "eyebrow": "Build A Striker Roblox guide",
+      "heading": "All 10 Build A Striker Attributes",
+      "lead": "The official Roblox description names ten attributes. Learn their labels and how to think about a choice without confusing editorial football terminology with measured in-game effects."
+    },
+    "sections": [
+      {
+        "id": "official-list",
+        "heading": "The Official List of 10 Build A Striker Attributes",
+        "intro": "These ten names are confirmed by the developer’s Roblox game description; detailed game formulas are not.",
+        "paragraphs": [
+          "The Roblox description says each round presents a random player from a rolled team and that you choose one of these ten attributes. It does not state whether a given choice increases a hidden score by a fixed amount, affects multiple stats, or stacks with a special multiplier. We therefore do not attach made-up percentages to the names.",
+          "Use the table as a vocabulary reference. The middle column is an interpretation of conventional football language and is not proof that the game implements those real-world meanings literally. The last column stays unverified until a reproducible in-game observation or official explanation supports the detail."
+        ],
+        "table": {
+          "caption": "The developer-listed attributes",
+          "columns": [
+            "Official name",
+            "Plain-language theme",
+            "Verified game-specific effect"
+          ],
+          "rows": [
+            [
+              "Shooting",
+              "Finishing-related label",
+              "Not independently confirmed"
+            ],
+            [
+              "Speed",
+              "Pace-related label",
+              "Not independently confirmed"
+            ],
+            [
+              "Dribbling",
+              "Ball-control label",
+              "Not independently confirmed"
+            ],
+            [
+              "Passing",
+              "Distribution label",
+              "Not independently confirmed"
+            ],
+            [
+              "Physical",
+              "Physical-contest label",
+              "Not independently confirmed"
+            ],
+            [
+              "Defense",
+              "Defensive label",
+              "Not independently confirmed"
+            ],
+            [
+              "Vision",
+              "Awareness label",
+              "Not independently confirmed"
+            ],
+            [
+              "IQ",
+              "Decision-related label",
+              "Not independently confirmed"
+            ],
+            [
+              "Ego",
+              "Distinctive in-game label",
+              "Not independently confirmed"
+            ],
+            [
+              "Weapon",
+              "Distinctive in-game label",
+              "Not independently confirmed"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "attacking-control",
+        "heading": "Attacking and Ball-Control Attributes",
+        "subsections": [
+          {
+            "heading": "Shooting and Speed",
+            "paragraphs": [
+              "Shooting is naturally associated with finishing, while Speed suggests movement. That language can help decide what type of striker you want to imagine. However, the game’s exact contribution to a leaderboard score, if any, remains unverified. In a random run, pick among what is actually offered."
+            ]
+          },
+          {
+            "heading": "Dribbling and Passing",
+            "paragraphs": [
+              "Dribbling and Passing are familiar football terms that suggest control and distribution. They may be useful conceptual complements for a mobile or playmaking direction, but we do not assert any numerical synergy between them. A player may prefer one over the other depending on their current run."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "physical-defense",
+        "heading": "Physical and Defensive Attributes",
+        "paragraphs": [
+          "Physical and Defense are two of the ten official names. In everyday football language they evoke strength in challenges and defensive ability. That is all the game’s public description directly allows us to infer. Nothing in the source confirms the precise impact on scoring, match outcomes, or leaderboard calculations.",
+          "A balanced approach may consider these categories alongside attacking selections if they appear, but this is a personal choice framework rather than a competitive ranking. Do not dismiss an option simply because an unsourced list labels it weak."
+        ]
+      },
+      {
+        "id": "special",
+        "heading": "Awareness and Special Attributes",
+        "subsections": [
+          {
+            "heading": "Vision and IQ",
+            "paragraphs": [
+              "Vision and IQ are separately listed official attributes. We have not verified what specific events, decisions, or hidden coefficients they influence. Treat intuitive descriptions of awareness as language aids, not an internal game formula."
+            ]
+          },
+          {
+            "heading": "Ego and Weapon",
+            "paragraphs": [
+              "Ego and Weapon are official attribute names in the Roblox description. They may sound like special mechanics, but a name alone does not confirm bonus traits, skill unlocks, rarity, or an increased multiplier. Those details need current in-game evidence before publication."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pick-one",
+        "heading": "How to Choose One Attribute in a Round",
+        "intro": "The following is a decision checklist created for players, not an official mathematical optimization routine.",
+        "steps": [
+          {
+            "heading": "Pick a purpose",
+            "description": "Decide whether this run is exploring finishing, pace, playmaking, or balance."
+          },
+          {
+            "heading": "Inspect the actual options",
+            "description": "Focus on the names displayed for your randomly selected player rather than a guaranteed target."
+          },
+          {
+            "heading": "Compare with earlier picks",
+            "description": "Ask whether a candidate supports the direction of the striker you have assembled so far."
+          },
+          {
+            "heading": "Choose and adjust",
+            "description": "Select one option, note the choice, and revise your plan if later offers change."
+          }
+        ]
+      },
+      {
+        "id": "playstyles",
+        "heading": "Attribute Choices for Different Playstyles",
+        "paragraphs": [
+          "Each approach is only a way to make choices with incomplete information. It is not a player tier list, and none of the rows should be read as a guaranteed optimal ten-round sequence. The Best Builds page explores conditional trade-offs in more detail.",
+          "If an in-game explanation later confirms what an individual stat actually changes, the description should be updated with a direct source and a review date. Until then, stating “not independently confirmed” is more useful than publishing false precision."
+        ],
+        "table": {
+          "caption": "Editorial playstyle comparison",
+          "columns": [
+            "Approach",
+            "Names you might consider",
+            "Caution"
+          ],
+          "rows": [
+            [
+              "Finisher",
+              "Shooting, possibly Speed",
+              "Not a confirmed score multiplier."
+            ],
+            [
+              "Speed Runner",
+              "Speed, Dribbling",
+              "No guarantee of paired offers."
+            ],
+            [
+              "Playmaker",
+              "Passing, Vision, possibly IQ",
+              "Effects of Vision/IQ not measured."
+            ],
+            [
+              "Balanced",
+              "A spread of available themes",
+              "Balance is not an official tier category."
+            ]
+          ]
+        },
+        "links": [
+          {
+            "label": "Compare strategies and trade-offs",
+            "slug": "best-builds",
+            "description": "See four ways to approach a random ten-round build."
+          },
+          {
+            "label": "Follow the first-run checklist",
+            "slug": "beginner-guide",
+            "description": "Understand where each attribute choice fits."
+          }
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "How many attributes are there in Build A Striker?",
+        "answer": "The developer lists exactly ten: Shooting, Speed, Dribbling, Passing, Physical, Defense, Vision, IQ, Ego and Weapon."
+      },
+      {
+        "question": "Is Weapon an official attribute?",
+        "answer": "Yes, Weapon appears in the game’s official description. Its exact effect is not independently confirmed here."
+      },
+      {
+        "question": "Does the game publish exact attribute multipliers?",
+        "answer": "The public Roblox description we checked does not specify multipliers; we do not invent numerical effects."
+      },
+      {
+        "question": "What if my preferred attribute is not offered?",
+        "answer": "Use the available choice that best fits your current plan, or adjust the plan. A specific player or attribute cannot be guaranteed from a random roll."
+      }
+    ],
+    "screenshots": [],
+    "relatedSlugs": [
+      "beginner-guide",
+      "best-builds",
+      "codes"
+    ],
+    "lastReviewed": "2026-10-29"
+  },
+  {
+    "enabled": true,
+    "slug": "best-builds",
+    "pageType": "guide",
+    "navLabel": "Best Builds",
+    "title": "Build A Striker Best Builds: Finisher, Speed & Balanced",
+    "description": "Build A Striker best builds for finishing, speed, playmaking and balanced runs. Compare trade-offs and adapt your choices across 10 random rounds.",
+    "navVisible": true,
+    "hero": {
+      "eyebrow": "Build A Striker Roblox guide",
+      "heading": "Build A Striker Best Builds for Different Playstyles",
+      "lead": "Compare four practical approaches to the random ten-round builder. These are conditional planning ideas, not official tier rankings or tested damage multipliers."
+    },
+    "sections": [
+      {
+        "id": "choosing",
+        "heading": "How to Choose a Build in a Random 10-Round Run",
+        "paragraphs": [
+          "There is no way to guarantee a predetermined list of player attributes during a normal random run. The official game rules describe a rolled team, a random player, and a one-attribute choice repeated for ten rounds. An effective planning approach begins with the options you actually receive, not with a fictional perfect roll.",
+          "These Build A Striker best builds are four editorial playstyle frameworks: Finisher, Speed Runner, Playmaker, and Balanced. None is an official class. We have not independently tested how each combination performs in the game’s leaderboard calculation, so our recommendations are about decisions and trade-offs rather than measured superiority.",
+          "When a roll presents an unexpected set of choices, adapt. Choosing a concept early may help you make coherent decisions, but it must not become a reason to ignore a useful alternative. The most honest comparison includes situations in which each strategy stops making sense."
+        ]
+      },
+      {
+        "id": "finisher",
+        "heading": "Finisher Build — Starting With Shooting",
+        "subsections": [
+          {
+            "heading": "Priority Themes",
+            "paragraphs": [
+              "A Finisher concept starts by considering Shooting whenever it appears among your options. Speed or ball control may be reasonable complementary themes if you want a more mobile striker. This is an interpretation of common football terms and not a confirmed formula for the game’s final rating."
+            ]
+          },
+          {
+            "heading": "Trade-offs",
+            "paragraphs": [
+              "If you pursue Shooting at every possible opportunity, you may have fewer choices left to explore movement or distribution themes. Do not claim that ten Shooting picks are always stronger than a diversified result: the actual offered choices and ranking mechanism are not established by the public description."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "speed",
+        "heading": "Speed Runner Build — Speed and Dribbling",
+        "subsections": [
+          {
+            "heading": "When It Fits",
+            "paragraphs": [
+              "If early random selections present Speed and Dribbling, you can explore a movement-focused direction. A coherent theme is useful for comparing your attempts, but there is no documented guarantee that two similarly themed labels create a game-defined bonus."
+            ]
+          },
+          {
+            "heading": "When to Pivot",
+            "paragraphs": [
+              "Suppose the middle rounds offer no further movement-oriented choices. Instead of chasing an impossible template, select a reasonable alternative from what is shown. A flexible pivot is more realistic than pretending you can force the next team or player roll."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "playmaker",
+        "heading": "Playmaker Build — Passing and Vision",
+        "subsections": [
+          {
+            "heading": "Supporting Choices",
+            "paragraphs": [
+              "A Playmaker framing places Passing and Vision near the center of your attention, with IQ potentially relevant as an awareness-related label. Neither the exact effect of Vision nor the relationship between Vision and IQ is verified, so this framework is illustrative rather than an optimization claim."
+            ]
+          },
+          {
+            "heading": "What You Might Give Up",
+            "paragraphs": [
+              "A run oriented around distribution themes may prioritize different names from a Finisher or Speed Runner concept. That is the trade-off to consider, not an asserted difference in goal totals, PvP wins, or leaderboard points."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "balanced",
+        "heading": "Balanced Build — A Flexible First-Run Option",
+        "subsections": [
+          {
+            "heading": "Why Beginners May Prefer It",
+            "paragraphs": [
+              "Balanced is a useful planning label for new players because it does not assume a particular player or team will appear. Consider a mix of categories that seems coherent for the actual options, and record the result to learn how the game presents finished strikers."
+            ]
+          },
+          {
+            "heading": "Round-by-Round Decision Checklist",
+            "paragraphs": [
+              "Rounds 1–3: notice what the random selections favor. Rounds 4–7: look for helpful complements if presented. Rounds 8–10: consider which broad themes you have underrepresented. This is advice for organizing decisions, not a measured game mechanic."
+            ]
+          }
+        ]
+      },
+      {
+        "id": "comparison",
+        "heading": "Best Builds Comparison Table",
+        "table": {
+          "caption": "Conditional Build A Striker strategies",
+          "columns": [
+            "Strategy",
+            "Priority themes",
+            "Useful when",
+            "Main uncertainty"
+          ],
+          "rows": [
+            [
+              "Finisher",
+              "Shooting, supporting movement",
+              "Offered options suit a finishing focus",
+              "No verified finishing formula."
+            ],
+            [
+              "Speed Runner",
+              "Speed, Dribbling",
+              "You receive movement-themed choices",
+              "No confirmed synergy multiplier."
+            ],
+            [
+              "Playmaker",
+              "Passing, Vision / IQ",
+              "Distribution-themed options appear",
+              "Vision and IQ effects unverified."
+            ],
+            [
+              "Balanced",
+              "Mix of offered themes",
+              "Random choices do not support a specialization",
+              "Not confirmed to score highest."
+            ]
+          ]
+        }
+      },
+      {
+        "id": "adapt",
+        "heading": "How to Adapt a Build When Your Rolls Change",
+        "subsections": [
+          {
+            "heading": "Scenario A — Your first picks suggest Shooting",
+            "paragraphs": [
+              "Start with a Finisher concept, but if later offers only include other broad categories, evaluate the best available option rather than waiting for a guaranteed additional Shooting pick."
+            ]
+          },
+          {
+            "heading": "Scenario B — You planned Speed but receive Passing",
+            "paragraphs": [
+              "Consider whether a Playmaker or Balanced direction now describes your choices more accurately. The goal is to respond to the run, not to insist on a prewritten ten-attribute list."
+            ]
+          },
+          {
+            "heading": "Scenario C — Your last rounds show unusual attributes",
+            "paragraphs": [
+              "Ego and Weapon are confirmed names, but their precise in-game effects are not. Do not choose one solely because someone promises an undocumented tier bonus; note the outcome and compare it against another run."
+            ]
+          }
+        ],
+        "links": [
+          {
+            "label": "Check all official attribute names",
+            "slug": "attributes",
+            "description": "Learn what is confirmed and what still needs testing."
+          },
+          {
+            "label": "Read the beginner checklist",
+            "slug": "beginner-guide",
+            "description": "Review the random team/player/attribute sequence."
+          },
+          {
+            "label": "Browse reroll-code reports",
+            "slug": "codes",
+            "description": "See source-labeled code candidates without guaranteed claims."
+          }
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "question": "Is there one verified best Build A Striker build?",
+        "answer": "We have not confirmed a universally optimal build or any official numerical tier ranking. Your options also depend on random team and player rolls."
+      },
+      {
+        "question": "What should beginners choose first?",
+        "answer": "A balanced or flexible planning approach can help a first run, but it is a learning heuristic rather than a guaranteed strongest strategy."
+      },
+      {
+        "question": "What if I cannot roll the player needed for a guide?",
+        "answer": "Change the plan based on the attributes actually offered. Neither a specific player nor a specific sequence is guaranteed by the official rules."
+      },
+      {
+        "question": "Where can I check what each attribute means?",
+        "answer": "See our Attributes page for all ten official names and clear labels separating interpretations from verified mechanics."
+      }
+    ],
+    "screenshots": [],
+    "relatedSlugs": [
+      "attributes",
+      "beginner-guide",
+      "codes"
+    ],
+    "lastReviewed": "2026-10-29"
+  }
+]
