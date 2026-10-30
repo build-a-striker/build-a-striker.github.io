@@ -196,6 +196,34 @@
       ]
     },
     {
+      "id": "first-run-checklist",
+      "heading": "Build A Striker First-Run Checklist",
+      "intro": "Use this practical checklist when you open Build A Striker for the first time. It follows the publicly documented ten-round selection loop without assuming hidden odds, special rates or guaranteed players.",
+      "subsections": [
+        {
+          "heading": "Before round one: set a flexible goal",
+          "paragraphs": [
+            "Choose one simple goal before clicking through the selections: scoring-focused, movement-focused, creative passing or a balanced result. A goal is a guide, not a promise that the random rolls will cooperate. Decide which two or three attribute names suit that goal, then leave room to change course.",
+            "Keep the official ten-attribute list nearby. Shooting, Speed, Dribbling and Passing describe familiar football dimensions, while Vision, IQ, Ego and Weapon are game-defined labels whose exact formula is not published in the public experience description. Avoid applying a made-up numerical multiplier to any of them."
+          ]
+        },
+        {
+          "heading": "During the run: compare the option you actually have",
+          "paragraphs": [
+            "For every round, read the offered player and attribute choices before picking. Ask whether the choice reinforces an area you already emphasized or addresses a missing area. In the middle rounds, it is reasonable to shift your focus if the available options point toward a more coherent striker. This is decision advice, not a claim that the game awards a bonus for following this sequence.",
+            "Keep a short note of what you selected. A ten-line record is enough to compare two runs without pretending to know player spawn probabilities. If your eventual result feels weak, that record helps you identify whether your choices were concentrated or scattered."
+          ]
+        },
+        {
+          "heading": "After round ten: review and adjust",
+          "paragraphs": [
+            "Look at the finished result and the leaderboard, which the developer explicitly mentions. Think about which rounds gave useful options and where you had to compromise. The next run may look different because the teams and players are randomly selected.",
+            "For a detailed walkthrough, open the Beginner Guide. If you are weighing particular stats, see Attributes; if you want a playstyle example, use Best Builds. These pages share the same official rules but answer different questions."
+          ]
+        }
+      ]
+    },
+    {
       "id": "official-source",
       "heading": "Official Game Link and Accuracy Notes",
       "paragraphs": [
