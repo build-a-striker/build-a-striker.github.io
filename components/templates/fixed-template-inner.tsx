@@ -1,4 +1,4 @@
-import { NativeAdSlot } from "@/components/integrations/native-ad-slot";
+
 import { FixedCodeEvents } from "@/components/templates/fixed-code-events";
 import { codes } from "@/content/reported-codes";
 import type { DataTable, PageSection } from "@/config/types";
@@ -8,6 +8,7 @@ import { siteSkin } from "@/config/skin";
 import type { SeoPageDefinition } from "@/config/types";
 import { enabledLegalPages, getRelatedPages, visibleCorePages } from "@/content/registry";
 import { esc, renderFixedDocument } from "@/lib/fixed-template/render";
+import { adsterraBannerSlotHtml, adsterraNativeSlotHtml } from "@/components/integrations/adsterra-placeholders";
 import { pageSchemas } from "@/lib/schema";
 import { assetPath, routePath } from "@/lib/urls";
 
@@ -73,15 +74,20 @@ export function FixedTemplateInner({ page }: { page: SeoPageDefinition }) {
   });
   // Keep the inherited Yorich footer visually identical on every route and
   // strictly after article / FAQ / related links / ad slot.
-  const footerStart = rendered.rest.lastIndexOf("<footer");
-  const bodyHtml = footerStart >= 0 ? rendered.rest.slice(0, footerStart) : rendered.rest;
-  const footerHtml = footerStart >= 0 ? rendered.rest.slice(footerStart) : "";
+  // On guide pages the H1 + lead form the existing first-screen introduction.
+  // Insert Banner after the full lead, Native after the first complete real section.
+  const contentWithAds = page.pageType === "legal" ? rendered.rest : rendered.rest
+    .replace(/(<p class="lead">[\s\S]*?<\/p>)/, `$1${adsterraBannerSlotHtml()}`)
+    .replace(/(<\/section>)/, `$1${adsterraNativeSlotHtml()}`);
+  const footerStart = contentWithAds.lastIndexOf("<footer");
+  const bodyHtml = footerStart >= 0 ? contentWithAds.slice(0, footerStart) : contentWithAds;
+  const footerHtml = footerStart >= 0 ? contentWithAds.slice(footerStart) : "";
   return (
     <>
       <JsonLd data={pageSchemas(page)} />
       <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
       {page.slug === "codes" ? <FixedCodeEvents /> : null}
-      <div className="site-container"><NativeAdSlot /></div>
+      
       {footerHtml ? <div dangerouslySetInnerHTML={{ __html: footerHtml }} /> : null}
     </>
   );

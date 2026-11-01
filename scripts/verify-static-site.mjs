@@ -12,7 +12,12 @@ for(const slug of pages){
  if(/<meta name="robots" content="noindex/i.test(html)) throw Error(`Noindex unexpectedly set for ${path}`);
  if(!html.includes("https://build-a-striker.github.io"))throw Error(`Canonical target missing for ${path}`);
  for(const other of pages.filter(Boolean)){if(!html.includes(`/${other}/`))throw Error(`Navigation to ${other} missing on ${path}`)}
- console.log(`${path} title=${title}`)
+ for(const slot of ["banner","native"]){
+  const count=(html.match(new RegExp(`<div class="adsterra-placement adsterra-placement--${slot}"`, "g"))||[]).length;
+  if(count!==1)throw Error(`Expected one ${slot} ad slot in ${path}; found ${count}`);
+ }
+ if(html.indexOf("data-adsterra-banner-slot")>html.indexOf("data-adsterra-native-slot"))throw Error(`Banner must precede Native on ${path}`);
+ console.log(`${path} title=${title} adSlots=ok`)
 }
 if(!existsSync(join(base,"robots.txt")) || !existsSync(join(base,"sitemap.xml")))throw Error("SEO discovery files missing");
 const robots=readFileSync(join(base,"robots.txt"),"utf8");
