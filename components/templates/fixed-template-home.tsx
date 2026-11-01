@@ -1,4 +1,4 @@
-import { NativeAdSlot } from "@/components/integrations/native-ad-slot";
+
 import { Faq } from "@/components/site/faq";
 import { JsonLd } from "@/components/site/json-ld";
 import { siteConfig } from "@/config/site";
@@ -6,6 +6,7 @@ import { siteSkin } from "@/config/skin";
 import type { HomePageDefinition, InternalLink } from "@/config/types";
 import { visibleCorePages } from "@/content/registry";
 import { esc, renderFixedDocument } from "@/lib/fixed-template/render";
+import { adsterraBannerSlotHtml, adsterraNativeSlotHtml } from "@/components/integrations/adsterra-placeholders";
 import { homeSchemas } from "@/lib/schema";
 import { assetPath, routePath } from "@/lib/urls";
 
@@ -49,14 +50,17 @@ export function FixedTemplateHome({ home }: { home: HomePageDefinition }) {
   // Keep the original Footer after all page content, including FAQ and ad slots.
   // The fixed-template HTML already contains Footer markup; split only the
   // render location, never the Footer classes or responsive structure.
-  const footerOffset = rendered.rest.indexOf("<footer");
-  const mainHtml = footerOffset >= 0 ? rendered.rest.slice(0, footerOffset) : rendered.rest;
-  const footerHtml = footerOffset >= 0 ? rendered.rest.slice(footerOffset) : "";
+  // Insert ads between whole Yorich sections; never split the Hero or edit SEO copy.
+  const withBanner = rendered.rest.replace(/(<\/section>)(?=<main\b)/, `$1${adsterraBannerSlotHtml()}`);
+  const withAds = withBanner.replace("</main>", `</main>${adsterraNativeSlotHtml()}`);
+  const footerOffset = withAds.indexOf("<footer");
+  const mainHtml = footerOffset >= 0 ? withAds.slice(0, footerOffset) : withAds;
+  const footerHtml = footerOffset >= 0 ? withAds.slice(footerOffset) : "";
   return (
     <>
       <JsonLd data={homeSchemas(home)} />
       <div dangerouslySetInnerHTML={{ __html: mainHtml }} />
-      <div className="site-container"><NativeAdSlot /></div>
+      
       {home.faq.length ? (
         <div className="site-container"><Faq items={home.faq} /></div>
       ) : null}
