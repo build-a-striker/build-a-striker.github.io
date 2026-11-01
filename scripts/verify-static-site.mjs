@@ -13,7 +13,7 @@ for(const slug of pages){
  if(!html.includes("https://build-a-striker.github.io"))throw Error(`Canonical target missing for ${path}`);
  for(const other of pages.filter(Boolean)){if(!html.includes(`/${other}/`))throw Error(`Navigation to ${other} missing on ${path}`)}
  for(const slot of ["banner","native"]){
-  const count=(html.match(new RegExp(`data-adsterra-${slot}-slot`, "g"))||[]).length;
+  const count=(html.match(new RegExp(`<div class="adsterra-placement adsterra-placement--${slot}"`, "g"))||[]).length;
   if(count!==1)throw Error(`Expected one ${slot} ad slot in ${path}; found ${count}`);
  }
  if(html.indexOf("data-adsterra-banner-slot")>html.indexOf("data-adsterra-native-slot"))throw Error(`Banner must precede Native on ${path}`);
