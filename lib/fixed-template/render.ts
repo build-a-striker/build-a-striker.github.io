@@ -16,10 +16,10 @@ export function esc(value: string): string { return value.replace(/&/g,"&amp;").
 function safeAttr(value: string) { return esc(value).replace(/'/g,"&#39;"); }
 function slugOnly(value: string) { return value.replace(/^\/+|\/+$/g, ""); }
 
-export function templateNavLinks(nav: TemplateLink[], page: "home" | "inner", currentSlug?: string | null, markCurrent = false): string {
+export function templateNavLinks(nav: TemplateLink[], page: "home" | "inner", currentSlug?: string | null): string {
   return nav.filter((item)=>slugOnly(item.slug)).map((item)=>{
     const active = page === "inner" && currentSlug && slugOnly(item.slug) === slugOnly(currentSlug);
-    return `<a class="nav-link${active ? " active" : ""}" data-nav href="${safeAttr(item.href)}"${active && markCurrent ? ' aria-current="page"' : ""}>${esc(item.label)}</a>`;
+    return `<a class="nav-link${active ? " active" : ""}" data-nav href="${safeAttr(item.href)}"${active ? ' aria-current="page"' : ""}>${esc(item.label)}</a>`;
   }).join("");
 }
 
@@ -41,10 +41,7 @@ function replaceBrand(html: string, input: FixedTemplateInput): string {
   return next;
 }
 
-function replaceNav(html: string, links: string, guides: string): string {
-  const more = guides
-    ? `<details class="template-desktop-guide-nav"><summary>More Guides</summary><div class="template-desktop-guide-links">${guides}</div></details>`
-    : "";
+function replaceNav(html: string, links: string, expandedMobileMenu: boolean): string {
   const patterns = [
     /<nav class="([^"]*site-nav[^"]*)"[^>]*>[\s\S]*?<\/nav>/,
     /<nav class="(nav)"[^>]*>[\s\S]*?<\/nav>/,
@@ -54,11 +51,9 @@ function replaceNav(html: string, links: string, guides: string): string {
     if (!pattern.test(html)) continue;
     return html.replace(pattern, (full, cls: string) => {
       const primary = full.startsWith("<div")
-        ? `<div class="${cls}">${links}${more}</div>`
-        : `<nav class="${cls}" aria-label="Primary navigation">${links}${more}</nav>`;
-      // The approved fixed template hides the desktop nav at mobile widths;
-      // preserve its geometry and supply a keyboard-accessible mobile menu.
-      return `${primary}<details class="template-mobile-guide-nav${guides ? " template-mobile-expanded-guides" : ""}"><summary>Guides</summary><nav aria-label="Mobile guide navigation">${links}${guides}</nav></details>`;
+        ? `<div class="${cls}">${links}</div>`
+        : `<nav class="${cls}" aria-label="Primary navigation">${links}</nav>`;
+      return `${primary}<details class="template-mobile-guide-nav${expandedMobileMenu ? " template-mobile-expanded-guides" : ""}"><summary>Guides</summary><nav aria-label="Mobile guide navigation">${links}</nav></details>`;
     });
   }
   return html;
@@ -184,11 +179,12 @@ function populateSoftGuideFooter(html: string, input: FixedTemplateInput): strin
 
 export function renderFixedTemplate(input:FixedTemplateInput):string{
   const {pack,html:source}=templateSource(input.skin,input.page); const paint=resolveAccent(pack.skin,input.accentColorId);
-  const currentLabel=input.page==="inner"?([...input.nav, ...(input.guideLinks ?? [])].find(x=>slugOnly(x.slug)===slugOnly(input.currentSlug||""))?.label||input.heading||"Guide"):null;
+  const nav = [...input.nav, ...(input.guideLinks ?? [])];
+  const currentLabel=input.page==="inner"?(nav.find(x=>slugOnly(x.slug)===slugOnly(input.currentSlug||""))?.label||input.heading||"Guide"):null;
   let html=source;
   html=replaceBrand(html,input);
   html=html.replaceAll('href="home.html"',`href="${safeAttr(input.homeHref)}"`);
-  html=replaceNav(html,templateNavLinks(input.nav,input.page,input.currentSlug),templateNavLinks(input.guideLinks ?? [],input.page,input.currentSlug,true));
+  html=replaceNav(html,templateNavLinks(nav,input.page,input.currentSlug),Boolean(input.guideLinks?.length));
   html=replaceCrumbs(html,input.homeHref,currentLabel);
   html=html.replace(/href="inner\.html#([^"]+)"/g,(_m: string, id: string)=>{const linked=input.nav.find(x=>slugOnly(x.slug)===id);return`href="${safeAttr(linked?.href||`#${id}`)}"`});
   html=injectTemplateAssets(html,input);
@@ -271,27 +267,19 @@ ${scope} .template-inner-article .template-content-card h3{margin-top:4px}
 ${scope} .template-inner-article .template-link-list{display:grid;gap:10px;margin:16px 0}
 ${scope} .template-inner-article .template-link-list a{display:block;overflow-wrap:break-word}
 ${scope} .template-inner-article .template-copy-status{font-size:.85rem}
-${scope} .template-desktop-guide-nav{white-space:nowrap}
-${scope} .template-desktop-guide-nav summary,
 ${scope} .template-mobile-expanded-guides summary{cursor:pointer;min-height:44px;width:max-content;padding:10px 12px;border:1px solid hsl(var(--border));border-radius:8px;font:inherit;font-weight:700;list-style:revert}
-${scope} .template-desktop-guide-nav summary:focus-visible,
-${scope} .template-mobile-expanded-guides summary:focus-visible,
-${scope} .template-desktop-guide-links a:focus-visible{outline:2px solid hsl(var(--primary));outline-offset:2px}
-${scope} .template-desktop-guide-links{display:grid;min-width:170px;margin-top:6px;padding:6px;border:1px solid hsl(var(--border));border-radius:10px;background:hsl(var(--card))}
-${scope} .site-nav .template-desktop-guide-links a,
+${scope} .site-nav > a:focus-visible,
+${scope} .template-mobile-expanded-guides summary:focus-visible{outline:2px solid hsl(var(--primary));outline-offset:2px}
 ${scope} .template-mobile-expanded-guides nav a{display:flex;align-items:center;min-height:44px;border-radius:8px;color:hsl(var(--foreground))}
-${scope} .site-nav .template-desktop-guide-links a[aria-current="page"],
 ${scope} .template-mobile-expanded-guides nav a[aria-current="page"]{background:hsl(var(--primary));color:hsl(var(--primary-foreground))}
 ${scope} .template-footer-guides{margin-top:20px}
 ${scope} .template-guide-toc ul{display:flex;flex-wrap:wrap;gap:4px 24px;margin:8px 0 0}
 ${scope} .template-guide-toc li{margin:0}
 @media(min-width:821px){
-  ${scope} .top-inner:has(.template-desktop-guide-nav[open]){height:auto;padding-block:9px}
-  ${scope} .template-inner-row:has(.template-desktop-guide-nav[open]){padding-block:12px}
-  ${scope} :is(.top-inner,.template-inner-row):has(.template-desktop-guide-nav[open]),
-  ${scope} .site-nav:has(.template-desktop-guide-nav[open]){align-items:flex-start}
-  ${scope} :is(.top-inner,.template-inner-row):has(.template-desktop-guide-nav[open])>.brand{margin-top:4px}
-  ${scope} .template-desktop-guide-nav[open] summary{margin-inline-start:auto}
+  ${scope} .top-inner{height:auto;min-height:64px;padding-block:8px}
+  ${scope} .template-inner-row{padding-block:6px}
+  ${scope} :is(.top-inner,.template-inner-row) .site-nav{flex-wrap:wrap;justify-content:flex-end;min-width:0}
+  ${scope} :is(.top-inner,.template-inner-row) .site-nav > a{white-space:nowrap}
 }
 @media(max-width:820px){${scope} .template-mobile-guide-nav{display:block}}
 @media(max-width:820px){
