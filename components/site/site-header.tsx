@@ -10,6 +10,7 @@ import type { InternalLink } from "@/config/types";
 import { assetPath, routePath } from "@/lib/urls";
 import { FixedTemplateHeader } from "@/components/templates/fixed-template-header";
 import { isFixedTemplate } from "@/lib/fixed-template/mode";
+import type { TemplateLink } from "@/lib/fixed-template/render";
 import { SkinHeader } from "./skin-header";
 
 function isCurrent(slug: string, pathname: string) {
@@ -19,8 +20,8 @@ function isCurrent(slug: string, pathname: string) {
   return path === target || path.endsWith(target);
 }
 
-export function SiteHeader({ links }: { links: InternalLink[] }) {
-  if (isFixedTemplate()) return <FixedTemplateHeader links={links} />;
+export function SiteHeader({ links, guideLinks }: { links: InternalLink[]; guideLinks: TemplateLink[] }) {
+  if (isFixedTemplate()) return <FixedTemplateHeader links={links} guideLinks={guideLinks} />;
   const skin = siteSkin();
   if (skin !== "portal" && skin !== "wiki") return <SkinHeader links={links} skin={skin} />;
   return <PortalHeader links={links} />;

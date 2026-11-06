@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/site/json-ld";
 import { siteConfig } from "@/config/site";
 import { siteSkin } from "@/config/skin";
 import type { HomePageDefinition, InternalLink } from "@/config/types";
-import { visibleCorePages } from "@/content/registry";
+import { updateGuideLinks, visibleCorePages } from "@/content/registry";
 import { esc, renderFixedDocument } from "@/lib/fixed-template/render";
 import { adsterraBannerSlotHtml, adsterraNativeSlotHtml } from "@/components/integrations/adsterra-placeholders";
 import { homeSchemas } from "@/lib/schema";
@@ -39,6 +39,7 @@ export function FixedTemplateHome({ home }: { home: HomePageDefinition }) {
     accentColorId: siteConfig.theme.accentColorId,
     gameName: siteConfig.game.name || siteConfig.shortName,
     nav: links.map((link) => ({ slug: link.slug, label: link.label, href: routePath(link.slug) })),
+    guideLinks: updateGuideLinks,
     homeHref: "/",
     logoUrl: assetPath(siteConfig.assets.logo),
     bannerUrl: assetPath(siteConfig.assets.cover),

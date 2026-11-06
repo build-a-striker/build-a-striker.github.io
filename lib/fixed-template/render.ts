@@ -6,6 +6,7 @@ export interface TemplateEntry { href: string; title: string; text: string; }
 export interface FixedTemplateInput {
   preview?: boolean;
   legalLinks?: TemplateLink[];
+  guideLinks?: TemplateLink[];
   skin: TemplateSkin | string; page: "home" | "inner"; accentColorId?: string | null; gameName: string;
   nav: TemplateLink[]; currentSlug?: string | null; homeHref: string; logoUrl?: string | null; bannerUrl?: string | null;
   heading?: string | null; lead?: string | null; articleHtml?: string | null; entries?: TemplateEntry[] | null; supplementHtml?: string | null;
@@ -15,10 +16,10 @@ export function esc(value: string): string { return value.replace(/&/g,"&amp;").
 function safeAttr(value: string) { return esc(value).replace(/'/g,"&#39;"); }
 function slugOnly(value: string) { return value.replace(/^\/+|\/+$/g, ""); }
 
-export function templateNavLinks(nav: TemplateLink[], page: "home" | "inner", currentSlug?: string | null): string {
+export function templateNavLinks(nav: TemplateLink[], page: "home" | "inner", currentSlug?: string | null, markCurrent = false): string {
   return nav.filter((item)=>slugOnly(item.slug)).map((item)=>{
     const active = page === "inner" && currentSlug && slugOnly(item.slug) === slugOnly(currentSlug);
-    return `<a class="nav-link${active ? " active" : ""}" data-nav href="${safeAttr(item.href)}">${esc(item.label)}</a>`;
+    return `<a class="nav-link${active ? " active" : ""}" data-nav href="${safeAttr(item.href)}"${active && markCurrent ? ' aria-current="page"' : ""}>${esc(item.label)}</a>`;
   }).join("");
 }
 
@@ -40,7 +41,10 @@ function replaceBrand(html: string, input: FixedTemplateInput): string {
   return next;
 }
 
-function replaceNav(html: string, links: string): string {
+function replaceNav(html: string, links: string, guides: string): string {
+  const more = guides
+    ? `<details class="template-desktop-guide-nav"><summary>More Guides</summary><div class="template-desktop-guide-links">${guides}</div></details>`
+    : "";
   const patterns = [
     /<nav class="([^"]*site-nav[^"]*)"[^>]*>[\s\S]*?<\/nav>/,
     /<nav class="(nav)"[^>]*>[\s\S]*?<\/nav>/,
@@ -50,11 +54,11 @@ function replaceNav(html: string, links: string): string {
     if (!pattern.test(html)) continue;
     return html.replace(pattern, (full, cls: string) => {
       const primary = full.startsWith("<div")
-        ? `<div class="${cls}">${links}</div>`
-        : `<nav class="${cls}" aria-label="Primary navigation">${links}</nav>`;
+        ? `<div class="${cls}">${links}${more}</div>`
+        : `<nav class="${cls}" aria-label="Primary navigation">${links}${more}</nav>`;
       // The approved fixed template hides the desktop nav at mobile widths;
       // preserve its geometry and supply a keyboard-accessible mobile menu.
-      return `${primary}<details class="template-mobile-guide-nav"><summary>Guides</summary><nav aria-label="Mobile guide navigation">${links}</nav></details>`;
+      return `${primary}<details class="template-mobile-guide-nav${guides ? " template-mobile-expanded-guides" : ""}"><summary>Guides</summary><nav aria-label="Mobile guide navigation">${links}${guides}</nav></details>`;
     });
   }
   return html;
@@ -169,17 +173,22 @@ function populateSoftGuideFooter(html: string, input: FixedTemplateInput): strin
   const link = (at: number) => links[at]
     ? `<a href="${safeAttr(links[at].href)}">${esc(links[at].label)}</a>`
     : `<a href="${safeAttr(input.homeHref)}">Home</a>`;
-  const footer = `${footerOpen[0]}<div class="footer-inner"><div><div class="footer-brand"><img class="brand-logo" src="${safeAttr(input.logoUrl || "/images/build-a-striker-logo.png")}" alt=""><b>${esc(input.gameName)}</b></div><p>Independent Roblox player guides. Not affiliated with Roblox or the developer.</p></div><div><b>Game Guides</b>${link(0)}${link(1)}${link(2)}</div><div><b>More Resources</b>${link(3)}<a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div></div></footer>`;
+  const guideGroup = input.guideLinks?.length
+    ? `<nav class="template-footer-guides" aria-label="Update guides"><b>Update Guides</b>${input.guideLinks.map((guide) => (
+      `<a href="${safeAttr(guide.href)}">${esc(guide.label)}</a>`
+    )).join("")}</nav>`
+    : "";
+  const footer = `${footerOpen[0]}<div class="footer-inner"><div><div class="footer-brand"><img class="brand-logo" src="${safeAttr(input.logoUrl || "/images/build-a-striker-logo.png")}" alt=""><b>${esc(input.gameName)}</b></div><p>Independent Roblox player guides. Not affiliated with Roblox or the developer.</p></div><div><b>Game Guides</b>${link(0)}${link(1)}${link(2)}${guideGroup}</div><div><b>More Resources</b>${link(3)}<a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div></div></footer>`;
   return html.slice(0, start) + footer + html.slice(end + '</footer>'.length);
 }
 
 export function renderFixedTemplate(input:FixedTemplateInput):string{
   const {pack,html:source}=templateSource(input.skin,input.page); const paint=resolveAccent(pack.skin,input.accentColorId);
-  const currentLabel=input.page==="inner"?(input.nav.find(x=>slugOnly(x.slug)===slugOnly(input.currentSlug||""))?.label||input.heading||"Guide"):null;
+  const currentLabel=input.page==="inner"?([...input.nav, ...(input.guideLinks ?? [])].find(x=>slugOnly(x.slug)===slugOnly(input.currentSlug||""))?.label||input.heading||"Guide"):null;
   let html=source;
   html=replaceBrand(html,input);
   html=html.replaceAll('href="home.html"',`href="${safeAttr(input.homeHref)}"`);
-  html=replaceNav(html,templateNavLinks(input.nav,input.page,input.currentSlug));
+  html=replaceNav(html,templateNavLinks(input.nav,input.page,input.currentSlug),templateNavLinks(input.guideLinks ?? [],input.page,input.currentSlug,true));
   html=replaceCrumbs(html,input.homeHref,currentLabel);
   html=html.replace(/href="inner\.html#([^"]+)"/g,(_m: string, id: string)=>{const linked=input.nav.find(x=>slugOnly(x.slug)===id);return`href="${safeAttr(linked?.href||`#${id}`)}"`});
   html=injectTemplateAssets(html,input);
@@ -262,7 +271,37 @@ ${scope} .template-inner-article .template-content-card h3{margin-top:4px}
 ${scope} .template-inner-article .template-link-list{display:grid;gap:10px;margin:16px 0}
 ${scope} .template-inner-article .template-link-list a{display:block;overflow-wrap:break-word}
 ${scope} .template-inner-article .template-copy-status{font-size:.85rem}
+${scope} .template-desktop-guide-nav{white-space:nowrap}
+${scope} .template-desktop-guide-nav summary,
+${scope} .template-mobile-expanded-guides summary{cursor:pointer;min-height:44px;width:max-content;padding:10px 12px;border:1px solid hsl(var(--border));border-radius:8px;font:inherit;font-weight:700;list-style:revert}
+${scope} .template-desktop-guide-nav summary:focus-visible,
+${scope} .template-mobile-expanded-guides summary:focus-visible,
+${scope} .template-desktop-guide-links a:focus-visible{outline:2px solid hsl(var(--primary));outline-offset:2px}
+${scope} .template-desktop-guide-links{display:grid;min-width:170px;margin-top:6px;padding:6px;border:1px solid hsl(var(--border));border-radius:10px;background:hsl(var(--card))}
+${scope} .site-nav .template-desktop-guide-links a,
+${scope} .template-mobile-expanded-guides nav a{display:flex;align-items:center;min-height:44px;border-radius:8px;color:hsl(var(--foreground))}
+${scope} .site-nav .template-desktop-guide-links a[aria-current="page"],
+${scope} .template-mobile-expanded-guides nav a[aria-current="page"]{background:hsl(var(--primary));color:hsl(var(--primary-foreground))}
+${scope} .template-footer-guides{margin-top:20px}
+${scope} .template-guide-toc ul{display:flex;flex-wrap:wrap;gap:4px 24px;margin:8px 0 0}
+${scope} .template-guide-toc li{margin:0}
+@media(min-width:821px){
+  ${scope} .top-inner:has(.template-desktop-guide-nav[open]){height:auto;padding-block:9px}
+  ${scope} .template-inner-row:has(.template-desktop-guide-nav[open]){padding-block:12px}
+  ${scope} :is(.top-inner,.template-inner-row):has(.template-desktop-guide-nav[open]),
+  ${scope} .site-nav:has(.template-desktop-guide-nav[open]){align-items:flex-start}
+  ${scope} :is(.top-inner,.template-inner-row):has(.template-desktop-guide-nav[open])>.brand{margin-top:4px}
+  ${scope} .template-desktop-guide-nav[open] summary{margin-inline-start:auto}
+}
 @media(max-width:820px){${scope} .template-mobile-guide-nav{display:block}}
+@media(max-width:820px){
+  ${scope} .template-inner-row:has(.template-mobile-expanded-guides) .site-nav{display:none}
+  ${scope} .top-inner:has(>.template-mobile-expanded-guides[open]){height:auto}
+  ${scope} .template-mobile-expanded-guides[open]{width:100%;padding:10px 0}
+  ${scope} .template-mobile-expanded-guides[open] summary{margin-inline-start:auto}
+  ${scope} :is(.top-inner,.template-inner-row):has(>.template-mobile-expanded-guides[open])>.brand{position:absolute;top:14px;z-index:1}
+  ${scope} .template-mobile-expanded-guides nav{position:static;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:10px;box-shadow:none}
+}
 @media(max-width:760px){${scope} .template-inner-main{padding:24px 0 38px}${scope} .template-inner-article h1{font-size:clamp(2rem,8vw,3.2rem)}${scope} .template-home-supplement{padding:16px 0 34px}${scope} .template-data-table table{min-width:460px}}
 `;
 }

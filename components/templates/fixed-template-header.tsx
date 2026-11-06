@@ -6,10 +6,10 @@ import { siteSkin } from "@/config/skin";
 import type { InternalLink } from "@/config/types";
 import { homePage } from "@/content/home";
 import { isFixedTemplate } from "@/lib/fixed-template/mode";
-import { renderFixedDocument } from "@/lib/fixed-template/render";
+import { renderFixedDocument, type TemplateLink } from "@/lib/fixed-template/render";
 import { assetPath, routePath } from "@/lib/urls";
 
-export function FixedTemplateHeader({ links }: { links: InternalLink[] }) {
+export function FixedTemplateHeader({ links, guideLinks }: { links: InternalLink[]; guideLinks: TemplateLink[] }) {
   const pathname = usePathname() || "/";
   if (!isFixedTemplate()) return null;
   const skin = siteSkin();
@@ -29,6 +29,7 @@ export function FixedTemplateHeader({ links }: { links: InternalLink[] }) {
     accentColorId: siteConfig.theme.accentColorId,
     gameName: siteConfig.game.name || siteConfig.shortName,
     nav,
+    guideLinks,
     currentSlug,
     homeHref: "/",
     logoUrl: assetPath(siteConfig.assets.logo),

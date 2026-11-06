@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/site/json-ld";
 import { siteConfig } from "@/config/site";
 import { siteSkin } from "@/config/skin";
 import type { SeoPageDefinition } from "@/config/types";
-import { enabledLegalPages, getRelatedPages, visibleCorePages } from "@/content/registry";
+import { enabledLegalPages, getRelatedPages, updateGuideLinks, visibleCorePages } from "@/content/registry";
 import { esc, renderFixedDocument } from "@/lib/fixed-template/render";
 import { adsterraBannerSlotHtml, adsterraNativeSlotHtml } from "@/components/integrations/adsterra-placeholders";
 import { pageSchemas } from "@/lib/schema";
@@ -41,6 +41,11 @@ function sectionHtml(section: PageSection): string {
 
 function articleInner(page: SeoPageDefinition): string {
   const sections = page.sections.map(sectionHtml).join("");
+  const toc = page.showToc
+    ? `<nav class="template-guide-toc" aria-label="On this page"><strong>On this page</strong><ul>${page.sections.map((section) => (
+      `<li><a href="#${esc(section.id)}">${esc(section.heading)}</a></li>`
+    )).join("")}</ul></nav>`
+    : "";
   const faq = page.faq?.length
     ? `<section id="faq"><h2>Frequently Asked Questions</h2>${page.faq.map((item) => `<div class="template-content-card"><h3>${esc(item.question)}</h3><p>${esc(item.answer)}</p></div>`).join("")}</section>`
     : "";
@@ -50,7 +55,12 @@ function articleInner(page: SeoPageDefinition): string {
       `<li><a href="${esc(siteSkin() === "arcade-play" ? assetPath(routePath(item.slug)) : routePath(item.slug))}">${esc(item.navLabel)}</a></li>`
     )).join("")}</ul></section>`
     : "";
-  return `<p class="lead">${esc(page.hero.lead)}</p>${sections}${faq}${relatedHtml}`;
+  const sources = page.sources?.length
+    ? `<p class="template-guide-sources"><strong>Sources</strong> · ${page.sources.map(({ label, url }) => (
+      `<a href="${esc(url)}">${esc(label)}</a>`
+    )).join(" · ")}</p>`
+    : "";
+  return `<p class="lead">${esc(page.hero.lead)}</p>${toc}${sections}${faq}${sources}${relatedHtml}`;
 }
 
 export function FixedTemplateInner({ page }: { page: SeoPageDefinition }) {
@@ -64,6 +74,7 @@ export function FixedTemplateInner({ page }: { page: SeoPageDefinition }) {
     accentColorId: siteConfig.theme.accentColorId,
     gameName: siteConfig.game.name || siteConfig.shortName,
     nav,
+    guideLinks: updateGuideLinks,
     currentSlug: page.slug,
     homeHref: skin === "arcade-play" ? assetPath("/") : "/",
     logoUrl: skin === "arcade-play" ? assetPath(siteConfig.assets.logo) : null,

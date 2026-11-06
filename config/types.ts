@@ -180,6 +180,8 @@ export interface SeoPageDefinition {
   };
   sections: PageSection[];
   faq?: FaqItem[];
+  showToc?: boolean;
+  sources?: { label: string; url: string }[];
   screenshots?: ScreenshotItem[];
   relatedSlugs?: string[];
   lastReviewed: string;

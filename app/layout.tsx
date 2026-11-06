@@ -8,7 +8,7 @@ import { siteSkin } from "@/config/skin";
 import { scopedTemplateCss } from "@/lib/fixed-template/render";
 import { isFixedTemplate } from "@/lib/fixed-template/mode";
 import { themes } from "@/config/themes";
-import { enabledLegalPages, visibleCorePages } from "@/content/registry";
+import { enabledLegalPages, updateGuideLinks, visibleCorePages } from "@/content/registry";
 import { fontFaceCss } from "@/lib/fonts";
 import { rootMetadata } from "@/lib/seo";
 import "./globals.css";
@@ -46,7 +46,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
         {fixed ? <style dangerouslySetInnerHTML={{ __html: scopedTemplateCss(fixedSkin, siteConfig.theme.accentColorId) }} /> : null}
         <style dangerouslySetInnerHTML={{ __html: fontFaceCss(siteConfig.hosting.basePath) }} />
         <a href="#main-content" className="skip-link">Skip to content</a>
-        <SiteHeader links={navLinks} />
+        <SiteHeader links={navLinks} guideLinks={updateGuideLinks} />
         <div id="main-content">{children}</div>
         {fixed ? null : <SiteFooter coreLinks={navLinks} legalLinks={legalLinks} />}
         <AdsterraManager />
