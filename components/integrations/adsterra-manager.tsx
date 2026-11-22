@@ -21,7 +21,8 @@ function renderBanner(slot: HTMLElement) {
   frame.className = "adsterra-banner-frame";
   frame.setAttribute("scrolling", "no");
   frame.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
-  frame.setAttribute("sandbox", "allow-scripts allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation");
+  // No sandbox: a sandboxed srcdoc frame gets an opaque origin, so Adsterra cannot
+  // see which site requests the banner and serves nothing. srcdoc keeps the site origin.
   frame.srcdoc = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;overflow:hidden"><script>atOptions = ${JSON.stringify(options)};</script><script src="${banner.src}"></script></body></html>`;
   surface.replaceChildren(frame);
   slot.dataset.adsterraSize = size;
